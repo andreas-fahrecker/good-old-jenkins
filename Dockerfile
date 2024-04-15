@@ -4,6 +4,9 @@ USER root
 RUN groupadd -g 281 docker
 RUN usermod -aG docker jenkins
 
+# Install tea
+RUN apk add --no-cache tea
+
 COPY --chown=jenkins:jenkins executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 
 # Install jenkins plugins
