@@ -11,11 +11,11 @@ pipeline {
                 beforeAgent true;
                 branch 'main'
             }
-            environment {
-                DOCKER_HUB_CREDENTIALS = credentials('docker-hub-fah16145')
-            }
             stages {
-                stage('Login') {
+                stage('Login') {       
+                    environment {
+                        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-fah16145')
+                    }
                     steps {
                         sh 'docker login -u ${DOCKER_HUB_CREDENTIALS_USR} -p ${DOCKER_HUB_CREDENTIALS_PSW}'
                     }
