@@ -5,7 +5,7 @@ RUN groupadd -g 281 docker
 RUN usermod -aG docker jenkins
 
 # Install tea
-RUN apt-get update && apt-get install -y build-essential
+RUN apt-get update && apt-get install -y git make
 RUN git clone https://gitea.com/gitea/tea.git
 RUN cd tea && make && make install
 
