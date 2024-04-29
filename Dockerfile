@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:latest-jdk21
 
 USER root
 RUN groupadd -g 281 docker

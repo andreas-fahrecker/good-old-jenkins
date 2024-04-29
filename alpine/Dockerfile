@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:alpine
+FROM jenkins/jenkins:alpine-jdk21
 
 USER root
 RUN addgroup --gid 281 docker
