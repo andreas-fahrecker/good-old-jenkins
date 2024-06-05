@@ -11,10 +11,10 @@ RUN cd tea && make && make install
 
 COPY --chown=jenkins:jenkins executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 
-# Install jenkins plugins
-USER jenkins
-RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
-
 #Install git lfs
 RUN apt-get install -y git-lfs
 RUN git lfs install --system
+
+# Install jenkins plugins
+USER jenkins
+RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
